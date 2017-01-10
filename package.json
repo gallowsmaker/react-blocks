@@ -2,7 +2,7 @@
   "name": "react-blocks",
   "version": "1.1.4",
   "description": "A higher-level react component to manage complex layouts using CSS flexbox.",
-  "main": "lib/index",
+  "main": "src/index",
   "scripts": {
     "start": "node server.js",
     "build": "node ./node_modules/webpack/bin/webpack -p",
