@@ -1,13 +1,10 @@
 .editorconfig
 .eslintrc
 .travis.yml
-
 karma.conf.js
 server.js
 webpack.config.js
-
 demo
 scripts
-src
 
 
