@@ -2,8 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Demo from './demo';
 
-main()
-function main() {
+(function () {
   let container;
 
   container = document.createElement('div');
@@ -11,4 +10,4 @@ function main() {
   document.body.appendChild(container);
 
   render(<Demo />, container);
-}
+})();

@@ -58,19 +58,12 @@ function start() {
     },
 
     module: {
-      preLoaders: [
-        {
-          test: /\.js$/,
-          loaders: ['eslint'],
-          include: [paths.demo, paths.src],
-        }
-      ],
       loaders: [
-        {
-          test: /\.js?$/,
-          loaders: ['react-hot', 'babel?stage=0'],
-          include: [paths.demo, paths.src],
-        },
+				{
+					test: /\.js?$/,
+					loaders: ['babel-loader'],
+					include: [paths.demo, paths.src],
+				},
         {
           test: /\.less$/,
           exclude: /node_modules/,
@@ -101,16 +94,18 @@ function build() {
 
     output: {
       library: 'ReactBlocks',
-      libraryTarget: 'umd'
+      libraryTarget: 'umd',
+			path: 'build',
+			filename: 'ReactBlocks.js'
     },
 
     module: {
       loaders: [
-        {
-          test: /\.js?$/,
-          exclude: /node_modules/,
-          loader: 'babel?stage=0',
-        }
+				{
+					test: /\.js?$/,
+					loaders: ['babel-loader'],
+					include: [paths.demo, paths.src],
+				}
       ]
     },
 
@@ -144,11 +139,11 @@ function deploy() {
 
     module: {
       loaders: [
-        {
-          test: /\.js?$/,
-          exclude: /node_modules/,
-          loaders: ['babel?stage=0'],
-        },
+				{
+					test: /\.js?$/,
+					loaders: ['babel-loader'],
+					include: [paths.demo, paths.src],
+				},
         {
           test: /\.less$/,
           exclude: /node_modules/,

@@ -2,14 +2,11 @@ import Compose from './compose';
 
 export default (Component) => {
   class ComposedBlock extends Component {
-    _mediaQueryListenersByQuery: {};
-    state = {
-      _media: {}
-    };
 
     constructor() {
       super();
-      this.state = this.state || {};
+      this.state = this.state || { _media: {} };
+      this._mediaQueryListenersByQuery = this._mediaQueryListenersByQuery || {};
     }
 
     componentDidMount() {
